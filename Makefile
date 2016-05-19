@@ -1,3 +1,6 @@
+wam.log: ./wam.exe wam.src
+	./wam.exe < wam.src > wam.log
+
 log.log: ./exe.exe src.src
 	./exe.exe < src.src > log.log && tail $(TAIL) log.log
 C = cpp.cpp ypp.tab.cpp lex.yy.c
