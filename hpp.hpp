@@ -2,6 +2,7 @@
 #define _H_FM
 
 #include <iostream>
+#include <sstream>
 #include <cstdlib>
 #include <vector>
 #include <map>
@@ -18,9 +19,13 @@ struct Sym {
 extern map<string,Sym*> env;
 extern void env_init();
 
+struct Num: Sym { Num(string); };
+
 struct List: Sym { List(); };
 
 struct Op: Sym { Op(string); Sym*eval(); };
+
+struct Term: Sym { Term(Sym*,Sym*); string tagval(); };
 
 extern int yylex();
 extern int yylineno;
