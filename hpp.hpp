@@ -8,14 +8,17 @@
 using namespace std;
 
 struct Sym {
-	string val;
-	Sym(string);
+	string val; Sym(string);
 	vector<Sym*> nest; void push(Sym*);
-	virtual string head(); string pad(int);
-	virtual string dump(int=0);
+	virtual string dump(int=0); string pad(int);
 };
 
+extern map<string,Sym*> env;
+extern void env_init();
+
 struct List: Sym { List(); };
+
+struct Op: Sym { Op(string); };
 
 extern int yylex();
 extern int yylineno;

@@ -1,3 +1,9 @@
 # test
 
-files = [ src.src log.log ypp.ypp lpp.lpp hpp.hpp cpp.cpp Makefile ]
+skelex = [
+	files = [ src.src log.log 
+		core = [ ypp.ypp lpp.lpp hpp.hpp cpp.cpp ]
+		Makefile
+	]
+	.gitignore
+]

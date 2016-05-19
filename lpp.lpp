@@ -5,12 +5,12 @@
 %option yylineno
 %%
 #[^\n]*			{}
-[a-zA-Z0-9_]+	TOC(Sym,SYM)
+[a-zA-Z0-9_.]+	TOC(Sym,SYM)
 
-\[				TOC(Sym,LQ)
-\]				TOC(Sym,RQ)
+\[				TOC(Op,LQ)
+\]				TOC(Op,RQ)
 
-\=				TOC(Sym,EQ)
+\=				TOC(Op,EQ)
 
 [ \t\r\n]+		{}
 %%
