@@ -4,13 +4,14 @@
 %defines %union { Sym*o; }
 %token <o> SYM				/* symbol */
 %token <o> LQ RQ			/* [] */
-%token <o> EQ				/* = */
+%token <o> EQ TILD			/* = ~ */
 %type <o> ex scalar list
 %%
-REPL : | REPL ex	{ cout << $2->dump() << endl; };
+REPL : | REPL ex	{ cout << $2->eval()->dump() << endl; };
 scalar : SYM ;
 ex : scalar
 	| LQ list RQ	{ $$=$2; }
+	| TILD ex		{ $$=$1; $$->push($2); }
 	| ex EQ ex		{ $$=$2; $$->push($1); $$->push($3); }
 ;
 list :				{ $$=new List(); }

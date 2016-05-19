@@ -1,9 +1,12 @@
-# test
+# line comment
 
 skelex = [
-	files = [ src.src log.log 
+	README.md
+	files = [ 
+		src.src log.log 
 		core = [ ypp.ypp lpp.lpp hpp.hpp cpp.cpp ]
 		Makefile
 	]
-	.gitignore
-]
+	.gitignore bat.bat
+] skelex
+
