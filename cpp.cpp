@@ -33,10 +33,10 @@ Sym* Op::eval() {
 }
 
 Term::Term(Sym*N,Sym*A):Sym("term",N->val) {
+	ostringstream os; os << N->val << "/" << A->nest.size();
+	val=os.str(); env[val]=this;
 	for (auto it=A->nest.begin(),e=A->nest.end();it!=e;it++)
 		push(*it); }
-string Term::tagval() { ostringstream os;
-	os << tag << ":" << val << "/" << nest.size(); return os.str(); }
 
 map<string,Sym*> env;
 void env_init() {}

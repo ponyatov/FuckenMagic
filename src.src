@@ -7,6 +7,8 @@ term(1)
 term(2,3.14,'Var','term'())
 term([4,5] nest(6),7)
 
+term term/4
+
 .end 
 
 # bI core scheme

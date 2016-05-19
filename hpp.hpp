@@ -25,7 +25,7 @@ struct List: Sym { List(); };
 
 struct Op: Sym { Op(string); Sym*eval(); };
 
-struct Term: Sym { Term(Sym*,Sym*); string tagval(); };
+struct Term: Sym { Term(Sym*,Sym*); };
 
 extern int yylex();
 extern int yylineno;
