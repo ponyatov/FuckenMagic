@@ -4,8 +4,8 @@
 
 term()
 term(1)
-term(2,3,Var,trm())
-'term'([4,5] nest(6),7)
+term(2,3.14,'Var','term'())
+term([4,5] nest(6),7)
 
 .end 
 

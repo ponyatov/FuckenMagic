@@ -16,6 +16,7 @@ N [0-9]+
 <lexstring>'	{BEGIN(INITIAL); yylval.o = new Sym(LexString); return SYM;}
 <lexstring>.	{LexString+=yytext[0];}
 
+{S}{N}\.{N}		TOC(Num,NUM)
 {S}{N}			TOC(Num,NUM)
 
 [a-zA-Z0-9_.]+	TOC(Sym,SYM)
