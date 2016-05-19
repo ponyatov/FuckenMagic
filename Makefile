@@ -1,5 +1,8 @@
+HEAPsz = 0x10
 wam.log: ./wam.exe wam.src
-	./wam.exe < wam.src > wam.log
+	./wam.exe < wam.src > $@ && tail $(TAIL) $@
+./wam.exe: wam.cpp
+	$(CXX) -DHEAPsz=$(HEAPsz) -o $@ $<	
 
 log.log: ./exe.exe src.src
 	./exe.exe < src.src > log.log && tail $(TAIL) log.log
