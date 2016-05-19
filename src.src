@@ -1,5 +1,11 @@
 # line comment
 
+# wam test
+
+.end
+
+# bI core scheme
+
 skelex = [
 	README.md
 	files = [ 
@@ -8,5 +14,5 @@ skelex = [
 		Makefile
 	]
 	.gitignore bat.bat
-] skelex
+] skelex files
 
